@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import GDPerformanceView
+
+class ViewController: UIViewController, PerformanceMonitorDelegate {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var starTaskButton: UIButton!
@@ -32,6 +34,13 @@ class ViewController: UIViewController {
         
         label.text = "\(hour ?? 0):\(minutes ?? 0):\(seconds ?? 0)"
         print("Task is Running...")
+        PerformanceMonitor.shared().start()
+        PerformanceMonitor.shared().performanceViewConfigurator.options = [.performance, .memory]
+        PerformanceMonitor.shared().delegate = self
+    }
+    
+    func performanceMonitor(didReport performanceReport: PerformanceReport) {
+        print(performanceReport.cpuUsage, performanceReport.memoryUsage.used, performanceReport.memoryUsage.total)
     }
     
     @IBAction func startBackgroundTask(_ sender: AnyObject) {

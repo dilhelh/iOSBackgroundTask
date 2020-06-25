@@ -16,7 +16,7 @@ class BackgroundTask {
     // MARK: - Methods
     func startBackgroundTask() {
         NotificationCenter.default.addObserver(self, selector: #selector(interruptedAudio), name: AVAudioSession.interruptionNotification, object: AVAudioSession.sharedInstance())
-        self.playAudio()
+        self.playSound()
     }
     
     func stopBackgroundTask() {
@@ -26,25 +26,32 @@ class BackgroundTask {
     
     @objc fileprivate func interruptedAudio(_ notification: Notification) {
         if notification.name == AVAudioSession.interruptionNotification && notification.userInfo != nil {
-            var info = notification.userInfo!
+            let info = notification.userInfo!
             var intValue = 0
             (info[AVAudioSessionInterruptionTypeKey]! as AnyObject).getValue(&intValue)
-            if intValue == 1 { playAudio() }
+            if intValue == 1 { playSound() }
         }
     }
-    
-    fileprivate func playAudio() {
+
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "blank", withExtension: "wav") else { return }
+
         do {
-            let bundle = Bundle.main.path(forResource: "blank", ofType: "wav")
-            let alertSound = URL(fileURLWithPath: bundle!)
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: [.defaultToSpeaker])
+            if #available(iOS 10.0, *) {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            } else {
+                // Fallback on earlier versions
+            }
             try AVAudioSession.sharedInstance().setActive(true)
-            try self.player = AVAudioPlayer(contentsOf: alertSound)
-            // Play audio forever by setting num of loops to -1
-            self.player.numberOfLoops = -1
-            self.player.volume = 0.01
-            self.player.prepareToPlay()
-            self.player.play()
-        } catch { print(error) }
+
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player.numberOfLoops = -1
+            player.volume = 0.01
+            player.play()
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }

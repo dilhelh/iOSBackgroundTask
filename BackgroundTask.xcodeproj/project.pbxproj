@@ -14,9 +14,12 @@
 		5BC607F71D7146AC00D5C97A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC607F51D7146AC00D5C97A /* Main.storyboard */; };
 		5BC607F91D7146AC00D5C97A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC607F81D7146AC00D5C97A /* Assets.xcassets */; };
 		5BC607FC1D7146AC00D5C97A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC607FA1D7146AC00D5C97A /* LaunchScreen.storyboard */; };
+		D9B1BE196F99FCBD50E9D4F5 /* Pods_BackgroundTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB27C4B721C739FE198CCEDB /* Pods_BackgroundTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38DFC9CB89D9CC451EF9E8A5 /* Pods-BackgroundTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundTask.debug.xcconfig"; path = "Target Support Files/Pods-BackgroundTask/Pods-BackgroundTask.debug.xcconfig"; sourceTree = "<group>"; };
+		49B27AF4A47D826675527430 /* Pods-BackgroundTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundTask.release.xcconfig"; path = "Target Support Files/Pods-BackgroundTask/Pods-BackgroundTask.release.xcconfig"; sourceTree = "<group>"; };
 		5B7F21651D71963A00D0A65D /* blank.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blank.wav; sourceTree = "<group>"; };
 		5B7F21671D72535400D0A65D /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		5BC607EE1D7146AC00D5C97A /* BackgroundTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +29,8 @@
 		5BC607F81D7146AC00D5C97A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BC607FB1D7146AC00D5C97A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BC607FD1D7146AC00D5C97A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79E4C18824A635A800DC5797 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		BB27C4B721C739FE198CCEDB /* Pods_BackgroundTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackgroundTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B1BE196F99FCBD50E9D4F5 /* Pods_BackgroundTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,7 @@
 			children = (
 				5BC607F11D7146AC00D5C97A /* AppDelegate.swift */,
 				5BC607F31D7146AC00D5C97A /* ViewController.swift */,
+				79E4C18824A635A800DC5797 /* BridgingHeader.h */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -62,6 +69,8 @@
 			children = (
 				5BC607F01D7146AC00D5C97A /* test */,
 				5BC607EF1D7146AC00D5C97A /* Products */,
+				B48A714C79938E43D535737B /* Pods */,
+				8C600ED0A0B12C918AEF3C37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +95,23 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		8C600ED0A0B12C918AEF3C37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB27C4B721C739FE198CCEDB /* Pods_BackgroundTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B48A714C79938E43D535737B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38DFC9CB89D9CC451EF9E8A5 /* Pods-BackgroundTask.debug.xcconfig */,
+				49B27AF4A47D826675527430 /* Pods-BackgroundTask.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BC608161D7146AC00D5C97A /* Build configuration list for PBXNativeTarget "BackgroundTask" */;
 			buildPhases = (
+				8A105CCCB3102D77C8E5C2A1 /* [CP] Check Pods Manifest.lock */,
 				5BC607EA1D7146AC00D5C97A /* Sources */,
 				5BC607EB1D7146AC00D5C97A /* Frameworks */,
 				5BC607EC1D7146AC00D5C97A /* Resources */,
+				FC1969B86BF502DD36782A86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -114,7 +142,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = Yaro;
+				ORGANIZATIONNAME = RSI;
 				TargetAttributes = {
 					5BC607ED1D7146AC00D5C97A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -159,6 +187,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A105CCCB3102D77C8E5C2A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BackgroundTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC1969B86BF502DD36782A86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BackgroundTask/Pods-BackgroundTask-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SystemServices/SystemServices.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SystemServices.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BackgroundTask/Pods-BackgroundTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BC607EA1D7146AC00D5C97A /* Sources */ = {
@@ -243,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -294,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -304,34 +375,38 @@
 		};
 		5BC608171D7146AC00D5C97A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38DFC9CB89D9CC451EF9E8A5 /* Pods-BackgroundTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4FSBQD52AV;
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.background;
 				PRODUCT_NAME = BackgroundTask;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = test/Example/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		5BC608181D7146AC00D5C97A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B27AF4A47D826675527430 /* Pods-BackgroundTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4FSBQD52AV;
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.home.background;
 				PRODUCT_NAME = BackgroundTask;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = test/Example/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

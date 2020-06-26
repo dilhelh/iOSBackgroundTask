@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     var backgroundTask = BackgroundTask()
     
+    let systemServices = SystemServices()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         let seconds = components.second
         
         label.text = "\(hour ?? 0):\(minutes ?? 0):\(seconds ?? 0)"
-        print("Task is Running...")
+        print("UUID: \(String(describing: systemServices.cfuuid))")
     }
     
     @IBAction func startBackgroundTask(_ sender: AnyObject) {
